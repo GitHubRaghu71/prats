@@ -1,0 +1,10 @@
+#PXY®
+#!/bin/bash
+
+source ~/env/bin/activate
+
+# Change to the script's directory
+cd ~/prats/sys/exe/run
+
+# Run the Python script
+python3 chartpxy.py

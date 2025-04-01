@@ -1,0 +1,11 @@
+1_VOLUME > 0 and 2_OPNL > 0 and 3_DPNL > 0 and 4_HAREV > 0 and 5_VWEIGHT > 0 and 6_VALUE > 0 and 7_SMA > 0
+
+
+7_SMA	Current Price > 50Day EMA		
+6_VALUE	Piotroski Score > 6		
+5_VWEIGHT	( Week Volume Avg * Current Price > 20000000 )		
+4_HAREV	( ( ( Day Open + Day High + Day Low + Current Price ) / 4 ) > ( ( Previous Day Open + Prev Day Close ) / 2 ) ) AND ( Previous Day Open > Prev Day Close ) AND ( ( ( ( Previous Day Open + Prev Day Close ) / 2 ) > Day Low ) OR ( ( ( Previous Day Open + Prev Day Close ) / 2 ) > Day Open ) )		
+QTY	5000 / Current Price		
+1_VOLUME	( Day Volume / Week Volume Avg ) > 1.4		
+3_DPNL	( ( Current Price - Prev Day Close ) / ( Prev Day Close ) )		
+2_OPNL	( ( Current Price - Day Open ) / ( Day Open ) ) * 100

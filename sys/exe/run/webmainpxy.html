@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Display</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Dark black background for the entire page */
+            color: #fff; /* White text color for better contrast */
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            background-color: #000; /* Dark black background for the container */
+        }
+        .content {
+            flex: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            gap: 10px;
+            padding: 20px;
+            background-color: #000; /* Dark black background for the content area */
+            box-sizing: border-box;
+            overflow: auto;
+        }
+        .section {
+            background-color: #000; /* Dark black background for sections */
+            border: 1px solid #444; /* Darker border color */
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+        .section h2 {
+            color: #888; /* Gray color for the section titles */
+            font-weight: bold; /* Bold text */
+            text-decoration: underline; /* Underlined text */
+        }
+        .sidebar {
+            flex: 1;
+            background-color: #000; /* Dark black background for the sidebar */
+            border-left: 2px solid #444; /* Darker border color */
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #888; /* Gray text color for table cells */
+        }
+        th, td {
+            border: 1px solid #444; /* Darker border color for table cells */
+            padding: 8px;
+        }
+        th {
+            background-color: #333; /* Dark background for table headers */
+            text-align: left; /* Left align table headers */
+            text-transform: uppercase; /* Capitalize table headers */
+        }
+        .negative {
+            color: #d9534f; /* Dark red color for negative numbers */
+        }
+        .positive {
+            color: #5bc0de; /* Dark green color for positive numbers */
+        }
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000; /* Dark black background for scrollbar track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #444; /* Gray color for scrollbar thumb */
+            border-radius: 10px; /* Rounded corners for scrollbar thumb */
+            border: 3px solid #000; /* Padding around scrollbar thumb */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #555; /* Slightly lighter gray on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="section" id="section1">
+                <h2>My NIFTY Options</h2>
+                <div id="csvTable1">Loading data...</div>
+            </div>
+            <div class="section" id="section2">
+                <h2>My BANKNIFTY Options</h2>
+                <div id="csvTable2">Loading data...</div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <iframe src="webchrtpxy.html" title="Nifty and Bank Nifty"></iframe>
+        </div>
+    </div>
+
+    <!-- Include PapaParse library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script>
+        function loadCSV(file, callback) {
+            Papa.parse(file, {
+                download: true,
+                header: true,
+                complete: function(results) {
+                    console.log(`Data from ${file}:`, results.data);
+                    if (results.errors.length > 0) {
+                        console.error(`PapaParse Errors for ${file}:`, results.errors);
+                    }
+                    callback(results.data);
+                },
+                error: function(error) {
+                    console.error(`Error loading CSV ${file}:`, error);
+                }
+            });
+        }
+
+        function displayCSV(data, containerId) {
+            const container = document.getElementById(containerId);
+            if (data.length === 0) {
+                container.innerHTML = 'No data available.';
+                return;
+            }
+
+            // Sort the data by PL% column in descending order
+            data.sort((a, b) => parseFloat(b['PL%']) - parseFloat(a['PL%']));
+
+            let table = '<table><thead><tr>';
+            Object.keys(data[0]).forEach(key => {
+                table += `<th>${key.toUpperCase()}</th>`;
+            });
+            table += '</tr></thead><tbody>';
+
+            data.forEach(row => {
+                table += '<tr>';
+                Object.entries(row).forEach(([key, value]) => {
+                    let cellClass = '';
+                    if (key.toLowerCase() === 'pl%' && !isNaN(value)) {
+                        // Apply color based on the value
+                        cellClass = parseFloat(value) < 0 ? 'negative' : 'positive';
+                    }
+                    table += `<td class="${cellClass}">${value}</td>`;
+                });
+                table += '</tr>';
+            });
+
+            table += '</tbody></table>';
+            container.innerHTML = table;
+        }
+
+        function refreshData() {
+            loadCSV('NIFTYOPTS.csv', data => displayCSV(data, 'csvTable1'));
+            loadCSV('BANKNIFTYOPTS.csv', data => displayCSV(data, 'csvTable2'));
+        }
+
+        window.onload = function() {
+            console.log('Page loaded');
+            refreshData();
+            setInterval(refreshData, 5000); // Refresh every 5 seconds
+        };
+    </script>
+</body>
+</html>

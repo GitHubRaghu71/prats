@@ -1,0 +1,22 @@
+#!/bin/bash
+cd $HOME/prats
+#mv $HOME/prats/sys/exe/run/filePnL.csv $HOME/prats/sys/exe/run/_filePnL.csv 
+#mv $HOME/prats/sys/exe/run/filePnL_nrml.csv $HOME/prats/sys/exe/run/_filePnL_nrml.csv 
+echo '                                 '
+echo "       ******** GET UPDATES *******"
+echo '                                 '
+git fetch --all
+echo '                                 '
+echo "       ****** RESET SOFTWERE ******"
+echo '                                 '
+git reset --hard origin/main
+sudo cp ~/prats/sys/pxy ~/prats/sys/p
+sudo cp ~/prats/sys/* /usr/local/bin/ &> /dev/null
+sudo chmod +x /usr/local/bin/*
+echo '                                 '
+echo "       ***** UPDATE COMPLETED *****"
+echo '                                 '
+pxypyc
+#rm $HOME/prats/sys/exe/run/filePnL.csv
+#mv $HOME/prats/sys/exe/run/_filePnL.csv $HOME/pxy/sys/exe/run/filePnL.csv 
+#mv $HOME/prats/sys/exe/run/_filePnL_nrml.csv $HOME/pxy/sys/exe/run/filePnL_nrml.csv

@@ -1,0 +1,4 @@
+../data/BPZ126.txt modified today ... reading None
+enctoken to broker z3ba/906xallWXr8EU9+aJMZioBsW/JrY+5zEAa/AtuFdkNufJLdv3ONUkriZ+084o5FzbijtidKPqQBBdE/XgK1NscC2DlcVBckYp1H6Xb/5vJ1tjc8oQ==
+looking up /root/myenv/lib/python3.12/site-packages/omspy_brokers/bypass.yaml
+trying to set headers with z3ba/906xallWXr8EU9+aJMZioBsW/JrY+5zEAa/AtuFdkNufJLdv3ONUkriZ+084o5FzbijtidKPqQBBdE/XgK1NscC2DlcVBckYp1H6Xb/5vJ1tjc8oQ==
