@@ -1,6 +1,6 @@
 #PXY®
 #!/bin/bash
-source ~/env/bin/activate
+source ~/myenv/bin/activate
 # Change to the script's directory
 cd ~/prats/sys/exe/run
 # Run the Python script

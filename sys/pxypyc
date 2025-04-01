@@ -4,7 +4,7 @@
 cd ~/prats/sys/exe/run
 
 # Activate the virtual environment
-source ~/env/bin/activate
+source ~/myenv/bin/activate
 
 # Define the output file
 output_file="pycpxy.txt"
@@ -15,7 +15,7 @@ if [ -f "pycpxy.py" ]; then
 elif [ -f "pycpxy.pcy" ]; then
     python3 pycpxy.pcy > $output_file 2>&1
 else
-    echo "Error: Neither pycpxy.py nor pycpxy.pcy found in /home/pxy/pxy/sys/exe/run/" > $output_file
+    echo "Error: Neither pycpxy.py nor pycpxy.pcy found in /home/prats/sys/exe/logs/" > $output_file
     exit 1
 fi
 

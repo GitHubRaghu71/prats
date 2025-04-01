@@ -1,0 +1,12 @@
+echo "cd ~/prats/sys/exe/run"
+cd ~/prats/sys/exe/run
+echo "source ~/myenv/bin/activate"
+source ~/myenv/bin/activate
+echo "Remove token and other log files"
+rm ~/prats/sys/exe/data/BPZ126.txt
+rm ~/prats/sys/exe/data/*.log
+rm ~/prats/sys/exe/run/output.txt
+echo "********************************************"
+echo "🏛 PRATS® Raghu Automated Trading System™ 🏛"
+echo "********************************************"
+python3 pxy.pyc

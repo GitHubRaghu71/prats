@@ -18,5 +18,5 @@ echo "       ***** UPDATE COMPLETED *****"
 echo '                                 '
 pxypyc
 #rm $HOME/prats/sys/exe/run/filePnL.csv
-#mv $HOME/prats/sys/exe/run/_filePnL.csv $HOME/pxy/sys/exe/run/filePnL.csv 
-#mv $HOME/prats/sys/exe/run/_filePnL_nrml.csv $HOME/pxy/sys/exe/run/filePnL_nrml.csv
+#mv $HOME/prats/sys/exe/run/_filePnL.csv $HOME/prats/sys/exe/run/filePnL.csv 
+#mv $HOME/prats/sys/exe/run/_filePnL_nrml.csv $HOME/prats/sys/exe/run/filePnL_nrml.csv

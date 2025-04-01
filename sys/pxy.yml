@@ -9,6 +9,3 @@ bypass:
   userid: BPZ126
   password: ZDR@ghu71
   totp: ZMSZIOOCK6SC6K34APIKVW23BXKBV52G
-telegram:
-  bot_token = 7374992903:AAEj_z7Cot0qDLJOQvQNKKUm-_zNoJgmAGk
-  chat_id = 7601958473  

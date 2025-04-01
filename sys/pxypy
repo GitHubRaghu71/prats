@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Activate the virtual environment
-source ~/env/bin/activate
+source ~/myenv/bin/activate
 
 # Change to the script's directory
 cd ~/prats/sys/exe/run
