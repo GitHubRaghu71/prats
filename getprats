@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Clone the repository
+git clone git@github.com:GitHubRaghu71/prats.git
+
+# Check if the clone was successful
+if [ $? -eq 0 ]; then
+    echo -e "\e[32mCloned prats repository successfully\e[0m"
+    ((success_count++))
+else
+    echo -e "\e[31mFailed to clone prats repository\e[0m"
+    ((fail_count++))
+    exit 1
+fi
