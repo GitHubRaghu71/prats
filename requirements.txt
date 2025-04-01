@@ -21,7 +21,6 @@ yfinance==0.2.54                 # Yahoo Finance API integration
 wheel                            # Needed only for building packages, not for runtime
 Cython                           # For compiling; not needed unless building extensions
 setuptools==58.2.0               # Older version; unnecessary for runtime
-html5lib, bleach               # Only needed if dealing with HTML sanitization
  
 # GitHub Repositories
 git+https://github.com/pannet1/omspy           # Core library for market data and automation
