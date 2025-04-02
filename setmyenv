@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo -e "\nrm ~/prats/sys/exe/data/BPZ126.txt"
+rm ~/prats/sys/exe/data/BPZ126.txt
+echo -e "\nrm ~/prats/sys/exe/logs/output.txt"
+rm ~/prats/sys/exe/data/output.txt
+echo -e "\nrm ~/prats/sys/exe/logs/output.txt"
+rm ~/prats/sys/exe/logs/output.txt
+echo -e "\nsource ~/myenv/bin/activate"
+source ~/myenv/bin/activate
+echo -e "\ncompiling files"
+pxypyc
+echo -e "\nAll Done! Good to go..."
+
