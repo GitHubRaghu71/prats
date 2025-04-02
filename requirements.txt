@@ -21,6 +21,8 @@ yfinance==0.2.54                 # Yahoo Finance API integration
 wheel                            # Needed only for building packages, not for runtime
 Cython                           # For compiling; not needed unless building extensions
 setuptools==58.2.0               # Older version; unnecessary for runtime
+rich
+colorama
  
 # GitHub Repositories
 git+https://github.com/pannet1/omspy           # Core library for market data and automation
@@ -36,7 +38,7 @@ git+https://github.com/pannet1/kiteext         # Extensions for Kite API integra
 # pytest-cov>=2.10.1             # Test coverage reporting
 # flake8>=3.8.4, <=4.0.1         # For linting Python code
 # mock>=3.0.5                    # Library for mocking during tests
-
+# html5lib, bleach                 # Only needed if dealing with HTML sanitization
 # Jupyter-related Packages
 # jupyter, jupyter-lab, ipython, ipywidgets, nbclient, nbconvert, notebook_shim, etc.
 # These are used for interactive development in notebooks and are unnecessary for production.
