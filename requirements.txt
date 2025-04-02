@@ -1,54 +1,215 @@
-#requirements.txt
-
-aiohttp==3.11.12                  # Required for asynchronous HTTP requests
-asciichartpy==1.5.25             # ASCII charts for CLI visualizations
-beautifulsoup4==4.13.3           # HTML/XML parsing and scraping
-colorama==0.4.6                  # Color support for terminal output
-gspread==6.1.4                   # Google Sheets integration
-kiteconnect==5.0.1               # Kite API for market data and trading
-pendulum==3.0.0                  # Advanced time/date handling
-plotly==6.0.0                    # Interactive plotting library
-prettytable==3.14.0              # Table formatting in CLI
-pyarrow==19.0.0                  # Efficient data serialization
-pyotp==2.9.0                     # OTP generation (useful for 2FA)
-python-telegram-bot==21.10       # Telegram bot framework
-PyYAML==6.0.2                    # YAML parsing library
-selenium==4.28.1                 # Browser automation framework
-tabulate==0.9.0                  # Tabular data presentation
-textblob==0.19.0                 # NLP and text analysis
-webdriver-manager==4.0.2         # Manages WebDriver binaries for Selenium
-yfinance==0.2.54                 # Yahoo Finance API integration
-wheel                            # Needed only for building packages, not for runtime
-Cython                           # For compiling; not needed unless building extensions
-setuptools==58.2.0               # Older version; unnecessary for runtime
+aiohappyeyeballs==2.4.6
+aiohttp==3.11.12
+aiosignal==1.3.2
+altgraph==0.17.4
+anyio==4.8.0
+argon2-cffi==23.1.0
+argon2-cffi-bindings==21.2.0
+arrow==1.3.0
+asciichartpy==1.5.25
+asttokens==3.0.0
+async-lru==2.0.4
+attrs==25.1.0
+autobahn==19.11.2
+Automat==24.8.1
+babel==2.17.0
+beautifulsoup4==4.13.3
+bleach==6.2.0
+bs4==0.0.2
+cachetools==5.5.1
+certifi==2025.1.31
+cffi==1.17.1
+charset-normalizer==3.4.1
+click==8.1.8
+colorama==0.4.6
+comm==0.2.2
+constantly==23.10.4
+cryptography==44.0.0
+Cython==3.0.11
+debugpy==1.8.13
+decorator==5.2.1
+defusedxml==0.7.1
+executing==2.2.0
+fastjsonschema==2.21.1
+fqdn==1.5.1
+frozendict==2.4.6
+frozenlist==1.5.0
+google-auth==2.38.0
+google-auth-oauthlib==1.2.1
+gspread==6.1.4
+h11==0.14.0
+html5lib==1.1
+httpcore==1.0.7
+httplib2==0.22.0
+httpx==0.28.1
+hyperlink==21.0.0
+idna==3.10
+incremental==22.10.0
+ipykernel==6.29.5
+ipython==9.0.2
+ipython_pygments_lexers==1.1.1
+ipywidgets==8.1.5
+isoduration==20.11.0
+jedi==0.19.2
+Jinja2==3.1.6
+joblib==1.4.2
+json5==0.10.0
+jsonpointer==3.0.0
+jsonschema==4.23.0
+jsonschema-specifications==2024.10.1
+jupyter==1.1.1
+jupyter-console==6.6.3
+jupyter-events==0.12.0
+jupyter-lsp==2.2.5
+jupyter_client==8.6.3
+jupyter_core==5.7.2
+jupyter_server==2.15.0
+jupyter_server_terminals==0.5.3
+jupyterlab==4.3.5
+jupyterlab_pygments==0.3.0
+jupyterlab_server==2.27.3
+jupyterlab_widgets==3.0.13
+kiteconnect==5.0.1
+kiteext @ git+https://github.com/pannet1/kiteext@b918a902a6ede1091b6cab6cf2866f3c2017455d
+lxml==5.3.0
+markdown-it-py==3.0.0
+MarkupSafe==3.0.2
+matplotlib-inline==0.1.7
+mdurl==0.1.2
+mistune==3.1.2
+multidict==6.1.0
+multitasking==0.0.11
+narwhals==1.25.2
+nbclient==0.10.2
+nbconvert==7.16.6
+nbformat==5.10.4
+nest-asyncio==1.6.0
+nltk==3.9.1
+notebook==7.3.2
+notebook_shim==0.2.4
+numpy==2.2.2
+oauth2client==4.1.3
+oauthlib==3.2.2
+omspy @ git+https://github.com/pannet1/omspy@29450db227c6185e3336f8111a276bc47c2bd81a
+omspy-brokers @ git+https://github.com/pannet1/omspy-brokers@733da61a1434cd401387b850bb1dd73f7acc81dd
+outcome==1.3.0.post0
+overrides==7.7.0
+packaging==24.2
+pandas==2.2.3
+pandocfilters==1.5.1
+parso==0.8.4
+peewee==3.17.9
+pendulum==3.0.0
+pexpect==4.9.0
+platformdirs==4.3.6
+plotly==6.0.0
+prettytable==3.14.0
+prometheus_client==0.21.1
+prompt_toolkit==3.0.50
+propcache==0.2.1
+psutil==7.0.0
+ptyprocess==0.7.0
+pure_eval==0.2.3
+pyarrow==19.0.0
+pyasn1==0.6.1
+pyasn1_modules==0.4.1
+pycparser==2.22
+pydantic==1.9.0
+Pygments==2.19.1
+pyinstaller==6.12.0
+pyinstaller-hooks-contrib==2025.1
+pyOpenSSL==25.0.0
+pyotp==2.9.0
+pyparsing==3.2.1
+PySocks==1.7.1
+python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
+python-json-logger==3.3.0
+python-telegram-bot==21.10
+pytz==2025.1
+PyYAML==6.0.2
+pyzmq==26.3.0
+referencing==0.36.2
+regex==2024.11.6
+requests==2.32.3
+requests-oauthlib==2.0.0
+rfc3339-validator==0.1.4
+rfc3986-validator==0.1.1
+rich==13.9.4
+rpds-py==0.23.1
+rsa==4.9
+scipy==1.15.2
+selenium==4.28.1
+Send2Trash==1.8.3
+service-identity==24.2.0
+setuptools==76.0.0
+six==1.17.0
+sniffio==1.3.1
+sortedcontainers==2.4.0
+soupsieve==2.6
+stack-data==0.6.3
+ta==0.11.0
+tabulate==0.9.0
+terminado==0.18.1
+textblob==0.19.0
+time-machine==2.16.0
+tinycss2==1.4.0
+toolkit @ git+https://github.com/pannet1/toolkit@978e092473ac7545b4b84f17c65cf539a53d3984
+tornado==6.4.2
+tqdm==4.67.1
+traitlets==5.14.3
+trio==0.28.0
+trio-websocket==0.11.1
+Twisted==24.3.0
+txaio==23.1.1
+types-python-dateutil==2.9.0.20241206
+typing_extensions==4.12.2
+tzdata==2025.1
+uri-template==1.3.0
+urllib3==2.3.0
+wcwidth==0.2.13
+webcolors==24.11.1
+webdriver-manager==4.0.2
+webencodings==0.5.1
+websocket-client==1.8.0
+wheel==0.45.1
+widgetsnbextension==4.0.13
+wsproto==1.2.0
+yarl==1.18.3
+yfinance==0.2.54
+zope.interface==7.2
+wheel
+setuptools==58.2.0
+git+https://github.com/pannet1/omspy
+git+https://github.com/pannet1/omspy-brokers
+git+https://github.com/pannet1/toolkit
+git+https://github.com/pannet1/kiteext
+kiteconnect
+pandas
+pyotp
+selenium
+webdriver_manager
+bs4
 rich
+prettytable
+yfinance
+omspy
+PyYAML==6.0
+rich
+python-telegram-bot
+textblob
 colorama
- 
-# GitHub Repositories
-git+https://github.com/pannet1/omspy           # Core library for market data and automation
-git+https://github.com/pannet1/omspy-brokers   # Broker-specific extensions for OmSpy
-git+https://github.com/pannet1/toolkit         # Useful utility tools for your app
-git+https://github.com/pannet1/kiteext         # Extensions for Kite API integration
-
-# Excluded Packages with Comments
-
-# Development and Testing Tools
-# pytest>=4.6.11                  # For testing purposes
-# responses>=0.12.1              # For mocking HTTP requests in tests
-# pytest-cov>=2.10.1             # Test coverage reporting
-# flake8>=3.8.4, <=4.0.1         # For linting Python code
-# mock>=3.0.5                    # Library for mocking during tests
-# html5lib, bleach                 # Only needed if dealing with HTML sanitization
-# Jupyter-related Packages
-# jupyter, jupyter-lab, ipython, ipywidgets, nbclient, nbconvert, notebook_shim, etc.
-# These are used for interactive development in notebooks and are unnecessary for production.
-
-# Unnecessary Dependencies
-# Twisted, Autobahn              # Network-related libraries; not required unless explicitly used
-# incrementally==22.0.0          # Unused library in the app
-
-# Notes:
-# - Verified and removed duplicate entries like `rich` and `PyYAML` (keeping `PyYAML==6.0.2`).
-# - Ensured pinned versions for critical libraries (e.g., `selenium`, `pandas`, etc.).
-# - Consolidated GitHub repositories to ensure no redundancy.
-# - Moved development/testing tools to comments for separation.
+aiohttp
+tabulate
+pyarrow
+gspread
+oauth2client
+asciichartpy
+pendulum
+plotly
+pytest>=4.6.11
+responses>=0.12.1
+pytest-cov>=2.10.1
+flake8>=3.8.4, <= 4.0.1
+mock>=3.0.5
+urllib3<2.0
