@@ -18,7 +18,10 @@ logging.basicConfig(level=logging.WARNING)
 logging = Logger(30, log_path + "main.log")
 
 black_file = data_path + "blacklist.txt"
-dct = CNFG["telegram"]
+bot_dct = CNFG["telegram"]
+bot_token = bot_dct["bot_token"]
+bot_user = bot_dct["chat_id"]
+bot_id = bot_dct["chat_id"] 
 
 # Save the original sys.stdout
 original_stdout = sys.stdout
@@ -135,11 +138,9 @@ if decision == "YES":
                 # Send notification to Telegram
                 try:
                     message_text = f"📊 Let's Buy {dct['tradingsymbol']}!\n📈 Current Price (LTP): {ltp}\n🔍 Check it out on TradingView: https://www.tradingview.com/chart/?symbol={dct['tradingsymbol']}"
-                    bot_token = dct["bot_token"]  # Replace with your actual bot token
-                    user_id = dct["chat_id"]  # Replace with your Telegram user ID
                     async def send_telegram_message(message_text):
                         bot = telegram.Bot(token=bot_token)
-                        await bot.send_message(chat_id=user_id, text=message_text)
+                        await bot.send_message(chat_id=bot_id, text=message_text)
                     asyncio.run(send_telegram_message(message_text))
                 except Exception as e:
                     logging.error(f"Error sending message to Telegram: {e}")

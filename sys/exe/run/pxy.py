@@ -166,6 +166,7 @@ while True:
     else:
         print(f"{GREY}{'𓆝 ⋆｡𖦹°‧🫧⋆.ೃ࿔*:･ No Buy - Waiting for Rise':>38}{RESET}")
     ############################################"PRATS® Raghu Automated Trading System™############################################ 
+    #print(f"{'🛒┈┈┈┈ Loop Action - CtrlCnCPxy  🛒🛒🛒':>38}{RESET}")
     subprocess.run(['python3', 'cntrlcncpxy.pyc'])
     subprocess.run(['python3', 'dshbrdpxy.pyc', 'l'])
     subprocess.run(['python3', 'selfpxy.pyc'])
