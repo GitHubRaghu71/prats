@@ -42,6 +42,7 @@ logging = Logger(30, log_path + "main.log")
 try:
     original_stdout = sys.stdout
     sys.stdout = open(f'{data_path}output.txt', 'w')
+    print(f"*******************\n-- Trying to get kite broker\n*******************")
     broker = get_kite()
 except Exception as e:
     sys.stdout = original_stdout
