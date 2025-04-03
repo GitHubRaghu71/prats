@@ -64,6 +64,7 @@ def process_data():
                 'dPL%', 'avg', 'Invested', 'value', 'PnL', 'PL%', 'Yvalue', 'dPnL', 'booked', 'bpnl', 'pnlrec_'
             ])
             combined_df.to_csv(f'{data_path}pxycombined.csv', index=False)
+            print(f"combined_df: \n {combined_df}")
             return combined_df
         #print(f'Combined_DF Key list: {lst}')
 
@@ -104,10 +105,14 @@ def process_data():
         combined_df['PL%'] = ((combined_df['PnL'] / combined_df['Invested']) * 100).round(2)
         combined_df['Yvalue'] = combined_df['qty'] * combined_df['close']
         combined_df['dPnL'] = combined_df['value'] - combined_df['Yvalue']
-        combined_df['booked'] = (combined_df['day_sell_price'] - combined_df['average_price']) * combined_df['day_sell_quantity']
-        combined_df['bpnl'] = round(combined_df['unrealised'] - combined_df['booked'], 2)
-        combined_df['pnlrec_'] = round((combined_df['bpnl'] / combined_df['Invested'] * 100), 2)
-
+        if 'day_sell_price' in combined_df.columns and 'day_sell_quantity' in combined_df.columns:
+            combined_df['booked'] = (combined_df['day_sell_price'] - combined_df['average_price']) * combined_df['day_sell_quantity']
+            combined_df['bpnl'] = round(combined_df['unrealised'] - combined_df['booked'], 2).round(2).astype(int)
+            combined_df['pnlrec_'] = round((combined_df['bpnl'] / combined_df['Invested'] * 100), 2).round(2).astype(int)
+        else:
+            combined_df['booked'] = 0  # Handle missing data case
+            combined_df['bpnl'] = 0  # Handle missing data case
+            combined_df['pnlrec_'] = 0  # Handle missing data case
         
         # Filter rows where 'key' starts with "NFO:"
         nfo_df = combined_df[combined_df['key'].str.startswith('NFO:')]
