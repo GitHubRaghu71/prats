@@ -42,7 +42,6 @@ logging = Logger(30, log_path + "main.log")
 try:
     original_stdout = sys.stdout
     sys.stdout = open(f'{data_path}output.txt', 'w')
-    print(f"*******************\n-- Trying to get kite broker\n*******************")
     broker = get_kite()
 except Exception as e:
     sys.stdout = original_stdout
@@ -215,7 +214,7 @@ try:
                 for username in user_usernames:
                     await bot.send_message(chat_id=username, text=message_text)
             try:
-                asyncio.run(send_telegram_message(message_text))
+                #asyncio.run(send_telegram_message(message_text))
                 print("DEBUG: Low funds Telegram message sent")
             except Exception as e:
                 print(f"DEBUG: Low funds Telegram error: {str(e)}")
