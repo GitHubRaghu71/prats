@@ -107,8 +107,8 @@ def process_data():
         combined_df['dPnL'] = combined_df['value'] - combined_df['Yvalue']
         if 'day_sell_price' in combined_df.columns and 'day_sell_quantity' in combined_df.columns:
             combined_df['booked'] = (combined_df['day_sell_price'] - combined_df['average_price']) * combined_df['day_sell_quantity']
-            combined_df['bpnl'] = round(combined_df['unrealised'] - combined_df['booked'], 2).round(2).astype(int)
-            combined_df['pnlrec_'] = round((combined_df['bpnl'] / combined_df['Invested'] * 100), 2).round(2).astype(int)
+            combined_df['bpnl'] = round(combined_df['unrealised'] - combined_df['booked'], 2)
+            combined_df['pnlrec_'] = round((combined_df['bpnl'] / combined_df['Invested'] * 100), 2)
         else:
             combined_df['booked'] = 0  # Handle missing data case
             combined_df['bpnl'] = 0  # Handle missing data case
