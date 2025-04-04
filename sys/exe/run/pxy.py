@@ -147,7 +147,7 @@ while True:
         nsma, bsma = None, None
     
     ############################################"PRATS® Raghu Automated Trading System™############################################ 
-    print((BRIGHT_GREEN + "🏛  PRATS®  Automated Trading System ™  🏛".center(42) if ha_nse_action == 'Bullish' else BRIGHT_RED + "🏛 PRATS® Raghu Automated Trading System™ 🏛".center(42) if ha_nse_action == 'Bearish' else "🏛 PRATS® Raghu Automated Trading System™ 🏛".center(42)) + RESET)    
+    print((BRIGHT_GREEN + "🏛    RATS® Raghu Auto Trading System™    🏛".center(42) if ha_nse_action == 'Bullish' else BRIGHT_RED + "🏛    RATS® Raghu Auto Trading System™    🏛".center(42) if ha_nse_action == 'Bearish' else "🏛    RATS® Raghu Auto Trading System™    🏛".center(42)) + RESET)    
     print("*" * 42)
     subprocess.run(['python3', 'tistpxy.pyc']) 
     ############################################"PRATS® Raghu Automated Trading System™############################################ 

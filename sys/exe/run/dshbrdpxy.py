@@ -85,12 +85,12 @@ else:
         right_aligned_format.format(       f"uPnL:{BRIGHT_RED if run_spnl < 0 else BRIGHT_GREEN}{str(round(run_spnl / 100000, 2)).zfill(6)}{RESET}")
     )
     # Calculate final PnL value
-    final_pnl_value = round((CnC_tCap_rounded + cashnow) - 15.9, 2)
+    final_pnl_value = round((CnC_tCap_rounded + cashnow) - 1.4, 2)
     # Append formatted strings to output_lines
     output_lines.append(
         left_aligned_format.format(
             f"{'tCap'.zfill(3)}:{BRIGHT_YELLOW}{str(round((cashnow + CnC_tCap_rounded), 2)).zfill(6)}"
-            f"{BRIGHT_RED if mktpredict == 'FALL' else GREY if mktpredict == 'SIDE' else BRIGHT_GREEN}       {BOLD}PXY{RESET}"
+            f"{BRIGHT_RED if mktpredict == 'FALL' else GREY if mktpredict == 'SIDE' else BRIGHT_GREEN}       {BOLD}RATS{RESET}"
         ) +
         right_aligned_format.format(
             f"{BRIGHT_GREEN if nmktpxy in ['Bull'] else (BRIGHT_RED if nmktpxy in ['Bear'] else GREY)}"
